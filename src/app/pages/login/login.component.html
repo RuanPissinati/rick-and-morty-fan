@@ -15,3 +15,28 @@
     <button type="submit" class="btn btn-primary">Entrar</button>
   </form>
 </div>
+
+
+<div class="login-container">
+  <mat-card class="login-card">
+    <mat-card-header>
+      <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field appearance="fill">
+        <mat-label>Usuário</mat-label>
+        <input matInput placeholder="Digite seu usuário" [(ngModel)]="username">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Senha</mat-label>
+        <input matInput type="password" placeholder="Digite sua senha" [(ngModel)]="password">
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="login()">Entrar</button>
+    </mat-card-actions>
+    <div *ngIf="error" class="error-message">
+      Credenciais inválidas. Por favor, tente novamente.
+    </div>
+  </mat-card>
+</div>
